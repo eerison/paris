@@ -243,8 +243,8 @@
             if (!class_exists($class_name) || !property_exists($class_name, $property)) {
                 return $default;
             }
-            $properties = get_class_vars($class_name);
-            return $properties[$property];
+
+            return $class_name::$$property;
         }
 
         /**
